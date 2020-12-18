@@ -1,0 +1,25 @@
+.Chat
+  .Chat-group
+    .Chat-name
+      .Chat-name__name テスト
+      .Chat-name__member Member:Maiki
+    = link_to "#", class: "Chat-group__edit" do
+      Edit
+  .MessageField
+    .Chat-message
+      .Chat-message__name Maiki
+      .Chat-message__time 2020/12/17(THU) 19:00:02
+    .Contact おはよう！
+    .Chat-message
+      .Chat-message__name Maiki
+      .Chat-message__time 2020/12/17(THU) 19:04:02
+    .Contact  今日は夜から雨
+  .Footer
+    %form.Form
+      .Form__contents
+        %input.Form__inputContent{type: 'text', placeholder: 'type a message'}
+        %label.Form__inputImage
+          = icon('far', 'image', class: 'Form__icon')
+          %input.Hidden{type: 'file'}
+      %input.Form__submit{type: 'submit', value: 'Send'}    
+
