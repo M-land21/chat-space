@@ -5,14 +5,16 @@
         = current_user.name
     .icons
       .icons__edit
-        = link_to '#' do
+        = link_to new_group_path do
           = icon("fas","edit")
       .icons__cog
         = link_to edit_user_path(current_user) do
           = icon("fas","cog")
   .Sidebar-group
-    .Group
-      .Group-name
-        テスト
-      .Group-message
-        まだメッセージはありません。
+    - current_user.groups.each do |group|
+      .Group
+        = link_to '#' do
+          .Group-name
+            = group.name
+          .Group-message
+            まだメッセージはありません。
