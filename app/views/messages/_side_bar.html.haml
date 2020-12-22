@@ -1,10 +1,15 @@
 .Sidebar
   .Sidebar-user
     .Sidebar-lists
-      %h3.Sidebar-lists__user Maiki
+      %h3.Sidebar-lists__user 
+        = current_user.name
     .icons
-      .icons__edit= icon("fas","edit")
-      .icons__cog= icon("fas","cog")
+      .icons__edit
+        = link_to '#' do
+          = icon("fas","edit")
+      .icons__cog
+        = link_to edit_user_path(current_user) do
+          = icon("fas","cog")
   .Sidebar-group
     .Group
       .Group-name
